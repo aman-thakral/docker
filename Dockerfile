@@ -3,6 +3,8 @@ FROM elasticsearch:2.3.5
 RUN apt-get update && apt-get install -y git curl python-pip python-dev libxml2-dev libxslt-dev \
   && rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade pip virtualenv
+
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
 
